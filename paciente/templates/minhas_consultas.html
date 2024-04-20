@@ -10,6 +10,9 @@
 {% endblock 'head' %}
 
 {% block 'body' %}
+
+    {% include "partials/navbar.html" %}
+
     <div class="container">
         <br>
         <h2><span class="color-dark">Suas consultas</span></h2>
@@ -40,7 +43,7 @@
                 <tbody>
                     {% for consulta in consultas %}
                         <tr>
-                            <td><a href="#">Dr(a). {{ consulta.data_aberta.user }}</a></td>
+                            <td><a href="{% url 'consulta' consulta.id %}">Dr(a). {{ consulta.data_aberta.user }}</a></td>
                             <td>{{ consulta.get_status_display }}</td>
                             <td>{{ consulta.data_aberta.data }}</td>
                         </tr>

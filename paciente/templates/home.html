@@ -10,8 +10,20 @@
 {% endblock 'head' %}
 
 {% block 'body' %}
+
+    {% include "partials/navbar.html" %}
+
     <br><br>
     <div class="container">
+        {% if messages %}
+            <br>
+            {% for message in messages %}
+                <section class="alert {{message.tags}}">
+                    {{message}}
+                </section>
+                {% endfor %}
+        {% endif %}
+        
         <div class="row">
             <div class="col-md-8">
                 <p style="font-size: 25px" class="p-bold">Olá, <span class="color-dark">{{request.user.username}}.</span></p>

@@ -18,7 +18,11 @@
         <h2><span class="color-dark">Suas consultas</span></h2>
         <div class="row">
             <div class="col-md">
-                <input type="text" name="especialidades" id="" class="form-control shadow-main-color" placeholder="Especialidades médias" />
+                <select name="especialidade" class="form-select">
+                    {% for especialidade in especialidades %}
+                        <option value="{{ especialidade.id }}">{{ especialidade }}</option>
+                    {% endfor %}
+                </select>
             </div>
 
             <div class="col-md">

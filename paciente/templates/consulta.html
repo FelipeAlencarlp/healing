@@ -39,6 +39,8 @@
                         <p style="font-size: 20px" class="p-bold">Dr(a). {{dado_medico.nome}} <i class="bi bi-patch-check-fill icon-main"></i></p>
                         <p>{{dado_medico.descricao}}</p>
                         <p class="p-bold">{{consulta.data_aberta.data}}</p>
+
+                        <a href="{% url 'cancelar_consulta' consulta.id %}" class="btn btn-danger">Cancelar consulta</a>
                     </div>
                 </div> 
                 <hr>
@@ -71,8 +73,6 @@
                 {% else %}
                     <a href="#" class="btn btn-success btn-dark-color btn-lg disabled" >Acessar consulta</a>
                 {% endif %}
-
-                <a href="{% url 'cancelar_consulta' consulta.id %}" class="btn btn-primary">Cancelar consulta</a>
                 
                 <hr>
                 <h3 class="p-bold">Meus documentos</h3>
